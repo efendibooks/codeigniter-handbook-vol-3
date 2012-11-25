@@ -7,7 +7,7 @@
 		 backupGlobals="false"
 		 backupStaticAttributes="false"
 		 colors="true"
-		 bootstrap="vendor/autoload.php">
+		 bootstrap="bootstrap.php">
 	<testsuites>
 		<testsuite name="CI Application Test Suite">
 			<directory>./application/tests/</directory>
