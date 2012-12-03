@@ -4,6 +4,6 @@
         "mockery/mockery": ">=0.7.2"
 	},
 	"autoload": {
-		"psr-0": { "": "application/models" }
+		"psr-0": { "": [ "application/models", "application/controllers" ] }
 	}
 }
