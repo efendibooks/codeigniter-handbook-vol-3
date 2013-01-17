@@ -31,33 +31,25 @@ class TrackersTest extends PHPUnit_Framework_TestCase
 
 	public function testASpecificTrackerCanBeRetrieved()
 	{
-		$data = array( 'id' => 'website_visits', 'name' => 'Website Visits' );
+		$data = (object)array( 'id' => 'website_visits', 'type' => Tracker_model::TABLE, 'name' => 'Website Visits' );
 
-		$this->trackers->tracker = Mockery::mock('Tracker_model');
-		$this->trackers->tracker->shouldReceive('get')
-								->with($data['id'])
-								->andReturn($data);
+		$result = Mockery::mock('db result');
+		$result->shouldReceive('row')->once()->andReturn($data);
 
-		$this->trackers->show($data['id']);
+		$this->trackers->tracker->db = Mockery::mock($this->trackers->tracker->db);
+		$this->trackers->tracker->db->shouldReceive('where')
+								    ->once()
+								    ->with('id', 'website_visits')
+								    ->andReturn($this->trackers->tracker->db);
+		$this->trackers->tracker->db->shouldReceive('get')
+									->once()
+									->with('trackers')
+									->andReturn($result);
+
+		$this->trackers->show($data->id);
 
 		$this->assertTrue(isset($this->trackers->data['tracker']), "isset(data['tracker']) is FALSE");
-		$this->assertEquals($data, $this->trackers->data['tracker']);
-	}
-
-	public function testValuesAreRetrieved()
-	{
-		$data = array( '127.0.0.1', '::1', '127.0.0.1', '127.0.0.1' );
-		$tracker_id = 'website_visits';
-
-		$this->trackers->tracker = Mockery::mock('Tracker_model', array('get' => 1));
-		$this->trackers->value = Mockery::mock('Value_model');
-		$this->trackers->value->shouldReceive('get_many_by')
-							  ->with('tracker_id', $tracker_id)
-							  ->andReturn($data);
-
-		$this->trackers->show($tracker_id);
-
-		$this->assertTrue(isset($this->trackers->data['values']), "isset(data['values']) is FALSE");
-		$this->assertEquals($data, $this->trackers->data['values']);
+		$this->assertThat($this->trackers->data['tracker'], $this->isInstanceOf('Tracker_TablePresenter'));
+		$this->assertEquals($data, $this->trackers->data['tracker']->tracker);
 	}
 }

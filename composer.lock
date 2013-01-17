@@ -1,6 +1,56 @@
 {
-    "hash": "555a7261245e51f9cdbbc2c0ccc35093",
+    "hash": "4c977583d69044101e72380a3f67bf31",
     "packages": [
+        {
+            "name": "jamierumbelow/presenters",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jamierumbelow/presenters.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/jamierumbelow/presenters/archive/1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "time": "2012-12-04 11:00:46",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Presenter": "libraries/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jamie Rumbelow",
+                    "email": "jamie@jamierumbelow.net",
+                    "homepage": "http://jamierumbelow.net"
+                }
+            ],
+            "description": "Clean up your views with PHP presenters",
+            "homepage": "https://github.com/jamierumbelow/presenters",
+            "keywords": [
+                "php",
+                "codeigniter",
+                "views",
+                "presenters",
+                "presenting",
+                "handbook"
+            ]
+        },
         {
             "name": "mockery/mockery",
             "version": "0.7.2",
@@ -56,16 +106,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "1.2.6",
+            "version": "1.2.7",
             "source": {
                 "type": "git",
                 "url": "git://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "1.2.6"
+                "reference": "1.2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sebastianbergmann/php-code-coverage/zipball/1.2.6",
-                "reference": "1.2.6",
+                "url": "https://github.com/sebastianbergmann/php-code-coverage/archive/1.2.7.zip",
+                "reference": "1.2.7",
                 "shasum": ""
             },
             "require": {
@@ -78,7 +128,7 @@
                 "ext-dom": "*",
                 "ext-xdebug": ">=2.0.5"
             },
-            "time": "2012-10-16 22:34:13",
+            "time": "2012-12-02 14:54:55",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -86,6 +136,7 @@
                     "PHP/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "include-path": [
                 ""
             ],
@@ -287,16 +338,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "3.7.9",
+            "version": "3.7.10",
             "source": {
                 "type": "git",
                 "url": "git://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3.7.9"
+                "reference": "3.7.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sebastianbergmann/phpunit/archive/3.7.9.zip",
-                "reference": "3.7.9",
+                "url": "https://github.com/sebastianbergmann/phpunit/archive/3.7.10.zip",
+                "reference": "3.7.10",
                 "shasum": ""
             },
             "require": {
@@ -305,7 +356,7 @@
                 "phpunit/php-text-template": ">=1.1.1",
                 "phpunit/php-code-coverage": ">=1.2.1",
                 "phpunit/php-timer": ">=1.0.2",
-                "phpunit/phpunit-mock-objects": ">=1.2.0",
+                "phpunit/phpunit-mock-objects": ">=1.2.0,<1.3.0",
                 "symfony/yaml": ">=2.1.0",
                 "ext-dom": "*",
                 "ext-pcre": "*",
@@ -318,7 +369,7 @@
                 "ext-simplexml": "*",
                 "ext-tokenizer": "*"
             },
-            "time": "2012-11-06 19:49:38",
+            "time": "2012-12-02 14:56:55",
             "bin": [
                 "composer/bin/phpunit"
             ],
@@ -334,6 +385,7 @@
                     "PHPUnit/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "include-path": [
                 "",
                 "../../symfony/yaml/"
@@ -407,23 +459,23 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.1.3",
+            "version": "v2.1.4",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml",
-                "reference": "v2.1.3"
+                "reference": "v2.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Yaml/zipball/v2.1.3",
-                "reference": "v2.1.3",
+                "url": "https://github.com/symfony/Yaml/archive/v2.1.4.zip",
+                "reference": "v2.1.4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-10-29 04:15:41",
+            "time": "2012-11-08 09:51:48",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -436,6 +488,7 @@
                     "Symfony\\Component\\Yaml": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],

@@ -12,7 +12,6 @@ class Trackers extends MY_Controller
 
 	public function show($id)
 	{
-		$this->data['tracker'] = $this->tracker->get($id);
-		$this->data['values'] = $this->value->get_many_by('tracker_id', $id);
+		$this->data['tracker'] = $this->tracker->presented()->get($id);
 	}
 }

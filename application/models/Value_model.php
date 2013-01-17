@@ -10,7 +10,7 @@ class Value_model extends MY_Model
 
 		return array_map(function($row)
 		{
-			return $row['value'];
+			return array($row['created_at'], $row['value']);
 		}, (array)$result);
 	}
 }
