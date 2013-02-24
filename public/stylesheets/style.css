@@ -1,0 +1,44 @@
+header {
+    margin-top: 50px;
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+}
+
+header select {
+    float: left;
+    margin-top: 6%;
+    margin-left: 15%;
+}
+
+header .addTrackerButton {
+    float: left;
+    margin-top: 7%;
+    margin-left: 4%;
+}
+
+header .addTrackerButton a:hover {
+    opacity: 0.6;
+}
+
+#trackerName {
+    font-size: 1.4em;
+    font-style: italic;
+    color: #999;
+    margin: 0;
+    position: relative;
+    top: -59px;
+    left: 280px;
+    width: 380px;
+}
+
+#trackerDisplay, #chart {
+    margin-top: -20px;
+}
+
+#pleaseSelectTracker {
+    padding: 25px 0 25px 3px;
+}
+
+#validationErrors p {
+    display: inline;
+}

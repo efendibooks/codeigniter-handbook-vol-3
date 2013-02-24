@@ -1,6 +1,6 @@
 <?php
 
-class Test_bootstrap
+class Test_bootstrap extends CI_Controller
 {
 	public function index() { }
 }

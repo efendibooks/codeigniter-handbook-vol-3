@@ -1,5 +1,9 @@
-<div>
-	<h1><?= $tracker->name() ?></h1>
+<h2 id="trackerName"><?= $tracker->name() ?></h2>
 
-	<?= $tracker->display() ?>
+<div class="span12" id="trackerDisplay">
+    <?php if(!$tracker->values()): ?>
+        <p>There's no data in this tracker. Please use the API to insert some data.</p>
+    <?php else: ?>
+        <?= $tracker->display() ?>
+    <?php endif; ?>
 </div>

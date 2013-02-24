@@ -3,10 +3,13 @@
 class Tracker_model extends MY_Model
 {
 	public $after_get = array();
+	public $validate = array(
+		array( 'field' => 'id', 'label' => 'ID', 'rules' => 'required|alpha_dash|is_unique[trackers.id]' ),
+		array( 'field' => 'name', 'label' => 'Name', 'rules' => 'required' ),
+	);
 
 	const TABLE = 1;
-	const GRAPH = 2;
-	const VISITS = 3;
+	const VISITS = 2;
 
 	public function presented()
 	{
@@ -22,7 +25,6 @@ class Tracker_model extends MY_Model
 		{
 			switch ($obj->type)
 			{
-				case self::GRAPH: $type = 'Graph'; break;
 				case self::VISITS: $type = 'Visits'; break;
 				case self::TABLE: default: $type = 'Table'; break;
 			}

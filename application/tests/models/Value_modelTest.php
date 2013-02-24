@@ -30,7 +30,10 @@ class Value_modelTest extends PHPUnit_Framework_TestCase
 		}, 
 		$dbdata),
 		$result);
+	}
 
+	public function tearDown()
+	{
 		Mockery::close();
 	}
 }

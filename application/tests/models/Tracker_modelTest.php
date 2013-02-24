@@ -4,8 +4,7 @@ class Tracker_modelTest extends PHPUnit_Framework_TestCase
 {
 	public $expectedConstants = array(
 		'TABLE' => 1,
-		'GRAPH' => 2,
-		'VISITS' => 3
+		'VISITS' => 2
 	);
 	
 	public function testConstantValues()
@@ -33,15 +32,12 @@ class Tracker_modelTest extends PHPUnit_Framework_TestCase
 		$tracker = new Tracker_model();
 
 		$tableObj = (object)array( 'type' => $this->expectedConstants['TABLE'] );
-		$graphObj = (object)array( 'type' => $this->expectedConstants['GRAPH'] );
 		$visitsObj = (object)array( 'type' => $this->expectedConstants['VISITS'] );
 
 		$tableObj = $tracker->present($tableObj);
-		$graphObj = $tracker->present($graphObj);
 		$visitsObj = $tracker->present($visitsObj);
 
 		$this->assertThat($tableObj, $this->isInstanceOf('Tracker_TablePresenter'));
-		$this->assertThat($graphObj, $this->isInstanceOf('Tracker_GraphPresenter'));
 		$this->assertThat($visitsObj, $this->isInstanceOf('Tracker_VisitsPresenter'));
 	}
 
@@ -54,5 +50,10 @@ class Tracker_modelTest extends PHPUnit_Framework_TestCase
 
 		$this->assertNotContains('present', $tracker->after_get);
 		$this->assertNotContains('removePresentation', $tracker->after_get);
+	}
+
+	public function tearDown()
+	{
+		Mockery::close();
 	}
 }
