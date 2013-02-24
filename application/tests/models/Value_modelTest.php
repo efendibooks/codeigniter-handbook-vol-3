@@ -17,6 +17,10 @@ class Value_modelTest extends PHPUnit_Framework_TestCase
 				  ->once()
 				  ->with('tracker_id', 'website_visits')
 				  ->andReturn($model->db);
+		$model->db->shouldReceive('order_by')
+				  ->once()
+				  ->with('created_at')
+				  ->andReturn($model->db);
 		$model->db->shouldReceive('get')
 				  ->once()
 				  ->with('values')
